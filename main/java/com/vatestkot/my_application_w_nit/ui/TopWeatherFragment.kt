@@ -7,6 +7,9 @@ import androidx.core.view.OneShotPreDrawListener.add
 import androidx.fragment.app.Fragment
 import com.vatestkot.my_application_w_nit.R
 import com.vatestkot.my_application_w_nit.Weather
+import com.vatestkot.my_application_w_nit.feature.search.SearchFragment
+import com.vatestkot.my_application_w_nit.ui.FavoritiesFragment.Companion.newInstance
+import com.vatestkot.my_application_w_nit.ui.WeatherDetailsFragment.Companion.newInstance
 import kotlinx.android.synthetic.main.fragment_top_weather.*
 
 class TopWeatherFragment : Fragment(R.layout.fragment_top_weather) {
@@ -24,7 +27,7 @@ class TopWeatherFragment : Fragment(R.layout.fragment_top_weather) {
         }
         btnGoToSearch.setOnClickListener {
             requireFragmentManager().beginTransaction()
-                .replace(R.id.container,SearchFragment.newInstance(weather))
+                .replace(R.id.container, SearchFragment())
                 .addToBackStack("SearchFragment")
                 .commit()
         }
