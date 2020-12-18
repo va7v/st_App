@@ -48,6 +48,7 @@ class SearchFragment : Fragment(R.layout.fragment_search), SearchView {
             }
             if (presenter.LongitudeIsCorrect(etLongitude.text.toString())) {
             presenter.setLongitude(etLongitude.text.toString().toInt())
+            }
         }
     }
 
