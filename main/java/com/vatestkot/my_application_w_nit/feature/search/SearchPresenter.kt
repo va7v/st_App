@@ -13,12 +13,12 @@ class SearchPresenter: MvpPresenter<SearchView>() {
         Period = days
     }
     private var Latitude: Int = 0
-    fun setLatitude(latitude: Int) {
-        Latitude = latitude
+    fun setLatitude(latit: Int) {
+        Latitude = latit
     }
     private var Longitude: Int = 0
-    fun setLongitude(longitude: Int) {
-        Longitude = longitude
+    fun setLongitude(longit: Int) {
+        Longitude = longit
     }
 
     fun validate(period:String, latitude: String, longitude: String) {
