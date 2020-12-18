@@ -4,7 +4,7 @@ import moxy.MvpPresenter
 import java.lang.Exception
 
 class SearchPresenter: MvpPresenter<SearchView>() {
-    private var selectedType: Type = Type.ONE
+    private var selectedType: Type = Type.DAY
     fun setType(type: Type) {
         selectedType = type
     }
@@ -13,12 +13,12 @@ class SearchPresenter: MvpPresenter<SearchView>() {
         Period = days
     }
     private var Latitude: Int = 0
-    fun setLatitude(lat_d: Int) {
-        Latitude = lat_d
+    fun setLatitude(latitude: Int) {
+        Latitude = latitude
     }
     private var Longitude: Int = 0
-    fun setLongitude(lon_d: Int) {
-        Longitude = lon_d
+    fun setLongitude(longitude: Int) {
+        Longitude = longitude
     }
 
     fun validate(period:String, latitude: String, longitude: String) {
