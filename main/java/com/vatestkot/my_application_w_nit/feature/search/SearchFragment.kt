@@ -34,20 +34,24 @@ class SearchFragment : Fragment(R.layout.fragment_search), SearchView {
         }
 
         btnSearch.setOnClickListener {
+            val period: String = etPeriod.text.toString()
+            var latitude: String = etLatitude.text.toString()
+            var longitude: String = etLongitude.text.toString()
+
             presenter.validate(
-                    etPeriod.text.toString(),
-                    etLatitude.text.toString(),
-                    etLongitude.text.toString()
+                    period,
+                    latitude,
+                    longitude
             )
-            
-            if (presenter.PeriodIsCorrect(etPeriod.text.toString())) {
-                presenter.setPeriod(etPeriod.text.toString().toInt())
+
+            if (presenter.PeriodIsCorrect(period)) {
+                presenter.setPeriod(period.toInt())
             }
-            if (presenter.LatitudeIsCorrect(etLatitude.text.toString())) {
-                presenter.setLatitude(etLatitude.text.toString().toInt())
+            if (presenter.LatitudeIsCorrect(latitude)) {
+                presenter.setLatitude(latitude.toInt())
             }
-            if (presenter.LongitudeIsCorrect(etLongitude.text.toString())) {
-            presenter.setLongitude(etLongitude.text.toString().toInt())
+            if (presenter.LongitudeIsCorrect(longitude)) {
+                presenter.setLongitude(longitude.toInt())
             }
         }
     }
