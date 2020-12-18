@@ -24,14 +24,14 @@ class TopWeatherFragment : Fragment(R.layout.fragment_top_weather) {
                     .replace(R.id.container, SearchFragment())
                     .addToBackStack("SearchFragment")
                     .commit()
+        }
 
         btnGoToDetails.setOnClickListener{
             requireFragmentManager().beginTransaction()
                 .replace(R.id.container, WeatherDetailsFragment.newInstance(weather))
                 .addToBackStack("WeatherDetailsFragment")
                 .commit()
-        }
-
+        
         }
         btnGoToFavorities.setOnClickListener {
             requireFragmentManager().beginTransaction()
