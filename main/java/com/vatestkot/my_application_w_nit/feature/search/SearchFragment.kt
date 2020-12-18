@@ -40,13 +40,13 @@ class SearchFragment : Fragment(R.layout.fragment_search), SearchView {
                     etLongitude.text.toString()
             )
             
-            if (presenter.PeriodIsCorrect()) {
+            if (presenter.PeriodIsCorrect(etPeriod.text.toString())) {
                 presenter.setPeriod(etPeriod.text.toString().toInt())
             }
-            if (presenter.LatitudeIsCorrect()) {
+            if (presenter.LatitudeIsCorrect(etLatitude.text.toString())) {
                 presenter.setLatitude(etLatitude.text.toString().toInt())
             }
-            if (presenter.LongitudeIsCorrect()) {
+            if (presenter.LongitudeIsCorrect(etLongitude.text.toString())) {
             presenter.setLongitude(etLongitude.text.toString().toInt())
         }
     }
