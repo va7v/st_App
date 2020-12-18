@@ -35,12 +35,18 @@ class SearchFragment : Fragment(R.layout.fragment_search), SearchView {
 
         btnSearch.setOnClickListener {
             presenter.validate(
-                etLatitude.text.toString(),
-                etLongitude.text.toString()
+                    etPeriod.text.toString(),
+                    etLatitude.text.toString(),
+                    etLongitude.text.toString()
             )
+            presenter.setPeriod(etPeriod.text.toString().toInt())
             presenter.setLatitude(etLatitude.text.toString().toInt())
             presenter.setLongitude(etLongitude.text.toString().toInt())
         }
+    }
+
+    override fun showPeriodError() {
+        showErrorToast("Число дней")
     }
 
     override fun showLatitudeError() {

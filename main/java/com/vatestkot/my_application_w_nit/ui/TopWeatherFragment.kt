@@ -19,17 +19,19 @@ class TopWeatherFragment : Fragment(R.layout.fragment_top_weather) {
 
         val weather = Weather("Челябинск", "-7", "Ясно","Снег")
 
+        btnGoToSearch.setOnClickListener {
+            requireFragmentManager().beginTransaction()
+                    .replace(R.id.container, SearchFragment())
+                    .addToBackStack("SearchFragment")
+                    .commit()
+
         btnGoToDetails.setOnClickListener{
             requireFragmentManager().beginTransaction()
                 .replace(R.id.container, WeatherDetailsFragment.newInstance(weather))
                 .addToBackStack("WeatherDetailsFragment")
                 .commit()
         }
-        btnGoToSearch.setOnClickListener {
-            requireFragmentManager().beginTransaction()
-                .replace(R.id.container, SearchFragment())
-                .addToBackStack("SearchFragment")
-                .commit()
+
         }
         btnGoToFavorities.setOnClickListener {
             requireFragmentManager().beginTransaction()

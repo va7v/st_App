@@ -10,7 +10,7 @@
         android:id="@+id/cityName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Город: Челябинск"
+        android:text="Город: "
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"         />
@@ -19,7 +19,7 @@
         android:id="@+id/tempC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Температура: 0"
+        android:text="Температура: "
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cityName" />
@@ -27,7 +27,7 @@
         android:id="@+id/Clouds"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Облачность: Ясно"
+        android:text="Облачность: "
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tempC" />
@@ -35,7 +35,7 @@
         android:id="@+id/Rainfall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Осадки: Небольшой дождь"
+        android:text="Осадки: "
         android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@+id/Clouds"
         app:layout_constraintStart_toStartOf="parent" />

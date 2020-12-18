@@ -18,35 +18,63 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="1 день" />
+            android:text="Погода днём" />
 
         <RadioButton
             android:id="@+id/rbTwo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="2 дня" />
+            android:text="Погода ночью" />
 
         <RadioButton
             android:id="@+id/rbTree"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3 дня" />
+            android:text="Днём и ночью" />
 
     </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Дней в прогнозе:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgType" />
+
+
+    <EditText
+        android:id="@+id/etPeriod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:hint="Число дней (1...5)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+    android:id="@+id/textView3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Координаты места:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPeriod" />
 
     <EditText
         android:id="@+id/etLatitude"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Широта (-90000...+90000)"
+        android:text="0"
+        android:hint="Широта"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rgType" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
         android:id="@+id/etLongitude"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Долгота (-180000...180000)"
+        android:text="0"
+        android:hint="Долгота"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etLatitude" />
 
@@ -58,6 +86,9 @@
         android:text="Поиск"
         app:layout_constraintTop_toBottomOf="@+id/etLongitude"
         app:layout_constraintStart_toStartOf="parent"/>
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

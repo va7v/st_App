@@ -8,6 +8,10 @@ class SearchPresenter: MvpPresenter<SearchView>() {
     fun setType(type: Type) {
         selectedType = type
     }
+    private var Period: Int = 0
+    fun setPeriod(days: Int) {
+        Period = days
+    }
     private var Latitude: Int = 0
     fun setLatitude(lat_d: Int) {
         Latitude = lat_d
@@ -17,14 +21,26 @@ class SearchPresenter: MvpPresenter<SearchView>() {
         Longitude = lon_d
     }
 
-    fun validate(latitude: String, longitude: String) {
+    fun validate(period:String, latitude: String, longitude: String) {
         when {
+            !PeriodIsCorrect(period) -> viewState.showPeriodError()
             !LatitudeIsCorrect(latitude) -> viewState.showLatitudeError()
             !LongitudeIsCorrect(longitude) -> viewState.showLongitudeError()
         }
     }
 
-    private fun LatitudeIsCorrect(latitude: String): Boolean {
+    private fun PeriodIsCorrect(period: String): Boolean {
+        if (period.isEmpty()) return false
+
+        return try {
+            val rating = period.toInt()
+            rating in 1..5
+        } catch (e: Exception) {
+            false
+        }
+    }
+
+        private fun LatitudeIsCorrect(latitude: String): Boolean {
         if (latitude.isEmpty()) return false
 
         return try {

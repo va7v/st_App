@@ -7,6 +7,8 @@ import moxy.viewstate.strategy.alias.Skip
 @AddToEnd
 interface SearchView : MvpView {
 
+    fun showPeriodError()
+
     fun showLatitudeError()
 
     fun showLongitudeError()
