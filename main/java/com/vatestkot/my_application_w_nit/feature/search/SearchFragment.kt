@@ -9,7 +9,7 @@ import android.widget.Toast
 import com.vatestkot.my_application_w_nit.R
 import kotlinx.android.synthetic.main.fragment_search.*
 
-enum class Type { ONE, TWO, THREE }
+enum class Type { DAY, NIGHT, ALL }
 
 class SearchFragment : Fragment(R.layout.fragment_search), SearchView {
 
@@ -26,9 +26,9 @@ class SearchFragment : Fragment(R.layout.fragment_search), SearchView {
 
         rgType.setOnCheckedChangeListener { radioGroup, i ->
             val selectedType = when (i) {
-                R.id.rbOne -> Type.ONE
-                R.id.rbTwo -> Type.TWO
-                else -> Type.THREE
+                R.id.rbOne -> Type.DAY
+                R.id.rbTwo -> Type.NIGHT
+                else -> Type.ALL
             }
             presenter.setType(selectedType)
         }
@@ -39,8 +39,14 @@ class SearchFragment : Fragment(R.layout.fragment_search), SearchView {
                     etLatitude.text.toString(),
                     etLongitude.text.toString()
             )
-            presenter.setPeriod(etPeriod.text.toString().toInt())
-            presenter.setLatitude(etLatitude.text.toString().toInt())
+            
+            if (presenter.PeriodIsCorrect()) {
+                presenter.setPeriod(etPeriod.text.toString().toInt())
+            }
+            if (presenter.LatitudeIsCorrect()) {
+                presenter.setLatitude(etLatitude.text.toString().toInt())
+            }
+            if (presenter.LongitudeIsCorrect()) {
             presenter.setLongitude(etLongitude.text.toString().toInt())
         }
     }
