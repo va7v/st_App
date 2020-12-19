@@ -29,34 +29,34 @@ class SearchPresenter: MvpPresenter<SearchView>() {
         }
     }
 
-    private fun PeriodIsCorrect(period: String): Boolean {
-        if (period.isEmpty()) return false
+    private fun PeriodIsCorrect(periodText: String): Boolean {
+        if (periodText.isEmpty()) return false
 
         return try {
-            val rating = period.toInt()
-            rating in 1..5
+            val period = periodText.toInt()
+            period in 1..5
         } catch (e: Exception) {
             false
         }
     }
 
-        private fun LatitudeIsCorrect(latitude: String): Boolean {
-        if (latitude.isEmpty()) return false
+        private fun LatitudeIsCorrect(latitudeText: String): Boolean {
+        if (latitudeText.isEmpty()) return false
 
         return try {
-            val rating = latitude.toInt()
-            rating in -90..90
+            val latitude = latitudeText.toInt() // для проверки крайних координат
+            latitude in -90..90
         } catch (e: Exception) {
             false
         }
     }
 
-    private fun LongitudeIsCorrect(longitude: String): Boolean {
-        if (longitude.isEmpty()) return false
+    private fun LongitudeIsCorrect(longitudeText: String): Boolean {
+        if (longitudeText.isEmpty()) return false
 
         return try {
-            val rating = longitude.toInt()
-            rating in -180..180
+            val longitude = longitudeText.toInt()
+            longitude in -180..180
         } catch (e: Exception) {
             false
         }
